@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+	int arr[5][5]={0};
+	int i,j,k,n=1;
+	int start=5/2,end=5/2;
+	for(i=0;i<5;i++){
+		for(j=start;j<=end;j++){
+			arr[j][i]=n++;
+		}
+		if(i<5/2){
+			start--;
+			end++;
+		}
+		else{
+			start++;
+			end--;
+		}
+	}
+	for(i=4;i>=0;i--){
+		for(j=4;j>=0;j--){
+			if(arr[i][j]==0){
+				printf("   ");
+			}
+			else{
+				printf("%3d",arr[i][j]);
+			}
+		}
+		printf("\n");
+	}
+	return 0;
+}
